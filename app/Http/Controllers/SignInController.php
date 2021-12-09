@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SignInController extends Controller
+class RegisterController extends Controller
 {
-    public function signin()
+    public function register()
     {
-        return view('signin');
+        return view('register');
     }
 }

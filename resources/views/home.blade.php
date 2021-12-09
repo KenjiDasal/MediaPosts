@@ -14,9 +14,7 @@
                         </div>
                     @endif
 
-                    Welcom to Laravel Testing site
-
-                    read more <a href="{{ route('about')}}">About us</a>
+                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>

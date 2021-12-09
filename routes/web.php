@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PageController;
 
+use App\Http\Controllers\User\PostController as UserPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +21,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-
 Route::get('/login', [LoginController::class, 'login']);
 
-Route::get('/signin', function (){
-    return view('signin');
+Route::get('/register', function () {
+    return view('register');
 });
+
+Route::get('/profile', [ProfileController::class, 'DisplayProfile']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home');
+Route::get('/user/home', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.home');
+
+Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+
+Route::get('/user/posts/', [UserPostController::class, 'index'])->name('user.posts.index');
+Route::get('/user/posts/{id}', [UserPostController::class, 'show'])->name('user.posts.show');
