@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in! user in media posts') }}
+
+                    <br>
+
+                     <a href="{{ route('user.posts.index')}}">View Posts</a>
                 </div>
             </div>
         </div>

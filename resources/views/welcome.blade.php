@@ -14,9 +14,11 @@
                         </div>
                     @endif
 
-                    Welcom to Laravel Testing site
+                    Welcom to Media Post Testing site
 
                     read more <a href="{{ route('about')}}">About us</a>
+
+                   
                 </div>
             </div>
         </div>
