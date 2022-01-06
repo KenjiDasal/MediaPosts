@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\User\PostController as UserPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

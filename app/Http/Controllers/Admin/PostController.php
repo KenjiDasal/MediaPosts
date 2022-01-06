@@ -29,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -40,7 +40,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' =>'required|max:500',
+            'created_at' => 'required|date',
+            'updated_at' => 'required|date'
+        ]);
+
+        $post = new Post();
+        $post->artist = $request->input('artist');
+        $post->title = $request->input('title');
+        $post->likes = $request->input('likes');
+        $post->description = $request->input('description');
+        $post->img = $request->input('img');
+        $post->created_at = $request->input('created_at');
+        $post->updated_at = $request->input('updated_at');
+        $post->save();
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -53,7 +70,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view ('user.posts.show', [
+        return view ('admin.posts.show', [
 
 
             'post' => $post
@@ -67,7 +84,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view ('admin.posts.edit', [
+            'post' => $post
+        ]);
     }
 
     /**
@@ -79,7 +99,24 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $request->validate([
+            'title' => 'required',
+            'description' =>'required|max:500',
+            'created_at' => 'required|date',
+            'updated_at' => 'required|date'
+        ]);
+
+        $post->artist = $request->input('artist');
+        $post->title = $request->input('title');
+        $post->likes = $request->input('likes');
+        $post->description = $request->input('description');
+        $post->img = $request->input('img');
+        $post->created_at = $request->input('created_at');
+        $post->updated_at = $request->input('updated_at');
+        $post->save();
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**

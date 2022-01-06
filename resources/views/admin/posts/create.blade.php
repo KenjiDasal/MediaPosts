@@ -6,7 +6,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Edit Post
+            Add new Post
           </div>
           <div class="card-body">
           <!-- this block is ran if the validation code in the controller fails
@@ -20,38 +20,35 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.posts.update', $post->id)}}">
+            <form method="POST" action="{{ route('admin.posts.store')  }}">
               <input type="hidden" name="_token" value="{{  csrf_token()  }}">
-              <input type="hidden" name="_method" value="PUT">
-
-
               <div class="form-group">
                 <label for="artist">Artist</label>
-                <input type="text" class="form-control" id="artist" name="artist" value="{{ old('artist', $post->artist) }}" />
+                <input type="text" class="form-control" id="artist" name="artist" value="{{ old('artist') }}" />
               </div>
               <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $post->title) }}" />
+                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" />
               </div>
               <div class="form-group">
                 <label for="likes">Likes</label>
-                <input type="text" class="form-control" id="likes" name="likes" value="{{ old('likes', $post->likes) }}" />
+                <input type="text" class="form-control" id="likes" name="likes" value="{{ old('likes') }}" />
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $post->description) }}" />
+                <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
               </div>
               <div class="form-group">
-                <label for="img">Images</label>
-                <input type="text" class="form-control" id="img" name="img" value="{{ old('img', $post->img) }}" />
+                <label for="img">Image</label>
+                <input type="text" class="form-control" id="img" name="img" value="{{ old('img') }}" />
               </div>
               <div class="form-group">
-                <label for="created_at">Created at</label>
-                <input type="date" class="form-control" id="created_at" name="created_at" value="{{ old('created_at', $post->created_at) }}" />
+                <label for="created_at">Created At</label>
+                <input type="date" class="form-control" id="created_at" name="created_at" value="{{ old('created_at') }}" />
               </div>
               <div class="form-group">
-                <label for="updated_at">Update at</label>
-                <input type="date" class="form-control" id="updated_at" name="updated_at" value="{{ old('updated_at', $post->updated_at) }}" />
+                <label for="updated_at">Updated At</label>
+                <input type="date" class="form-control" id="updated_at" name="updated_at" value="{{ old('updated_at') }}" />
               </div>
 
               <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
@@ -63,3 +60,4 @@
     </div>
   </div>
 @endsection
+

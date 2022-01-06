@@ -32,18 +32,18 @@
                             </tr>
 
                             <tr>
-                                <td>Start Date</td>
-                                <td>{{$post->start_date}}</td>
+                                <td>Created At</td>
+                                <td>{{$post->created_at}}</td>
                             </tr>
 
                             <tr>
-                                <td>End Date</td>
-                                <td>{{$post->end_date}}</td>
+                                <td>Update At</td>
+                                <td>{{$post->updated_at}}</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <a class="btn btn-default">Back</a>
+                    <a href="{{route('admin.posts.index')}}" class="btn btn-default">Back</a>
                 </div>
             </div>
         </div>

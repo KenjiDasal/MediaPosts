@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     Posts
+                    <a href="{{ route('admin.posts.create') }}" class="btn btn-primary float-right">Add</a>
                 </div>
                 <div class="card-body">
                     @if (count($posts)=== 0)
