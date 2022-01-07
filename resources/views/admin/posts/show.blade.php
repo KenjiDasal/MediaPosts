@@ -12,10 +12,10 @@
                     <table id="table-posts" class="table table-hover">
                         <tbody>
                             <tr>
-
-                                    <img src="{{$post -> img}}" alt="">
-
+                                <td rowspan="8"><img src="{{ asset('images/' . $post->img) }}" width="150"/></td>
                             </tr>
+
+
                             <tr>
                                 <td>Title</td>
                                 <td>{{$post->title}}</td>

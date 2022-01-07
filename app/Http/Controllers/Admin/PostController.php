@@ -9,6 +9,7 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -46,6 +47,7 @@ class PostController extends Controller
             'created_at' => 'required|date',
             'updated_at' => 'required|date'
         ]);
+
 
         $post = new Post();
         $post->artist = $request->input('artist');

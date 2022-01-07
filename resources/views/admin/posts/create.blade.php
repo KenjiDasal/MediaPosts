@@ -38,10 +38,7 @@
                 <label for="description">Description</label>
                 <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
               </div>
-              <div class="form-group">
-                <label for="img">Image</label>
-                <input type="text" class="form-control" id="img" name="img" value="{{ old('img') }}" />
-              </div>
+
               <div class="form-group">
                 <label for="created_at">Created At</label>
                 <input type="date" class="form-control" id="created_at" name="created_at" value="{{ old('created_at') }}" />
@@ -49,6 +46,11 @@
               <div class="form-group">
                 <label for="updated_at">Updated At</label>
                 <input type="date" class="form-control" id="updated_at" name="updated_at" value="{{ old('updated_at') }}" />
+              </div>
+
+              <div class="form-group">
+                <label for="img">Image</label>
+                <input type="file" class="form-control" id="img" name="img" />
               </div>
 
               <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
